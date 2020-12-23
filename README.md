@@ -3,10 +3,17 @@
 Tyler, Dennis, Caitlin, Sim
 
 
-Brain Teaser App / 
-- 
-- badge/Award - 5 days completion 
+Brain Teaser App /
 
+- authentication ( not required) 
+- game ( Arthmetic )
+- Meditation
+- Manage your funds
+- fashion sense 
+- Daily quote -  
+- login counter - keeping track of the days you logged in.
+- badge/Award - 5 days completion 
+- 
 
 
 
