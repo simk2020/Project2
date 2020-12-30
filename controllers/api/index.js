@@ -5,7 +5,7 @@ const gameRoute = require('./gameRoute');
 
 router.use('/users', userRoutes);
 router.use('/projects', projectRoutes);
-router.use('/games', gameRoute);
+router.use('/game', gameRoute);
 
 module.exports = router;
 
