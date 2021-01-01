@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const securityScan = require ('../../utils/auth.js')
 
 router.get("/", (req, res) => {
     res.render("home")
@@ -10,6 +11,14 @@ router.get("/login", (req, res) => {
     
 })
 
-// router.get("")
+router.get("/game", securityScan, (req, res) => {
+    res.render("game")
+    
+})
 
-module.exports = router
+router.get("/createUser", (req, res) => {
+    res.render("createUser")
+    
+})
+
+module.exports = router;

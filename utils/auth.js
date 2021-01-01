@@ -5,4 +5,4 @@ const securityScan=(req,res,next)=>{
         next();
     }
 }
-module.exports=securityScan;
+module.exports = securityScan;

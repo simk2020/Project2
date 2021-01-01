@@ -18,4 +18,6 @@ if (process.env.JAWSDB_URL) {
   );
 }
 
+
+// comment
 module.exports = sequelize;
