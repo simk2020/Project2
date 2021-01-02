@@ -35,4 +35,9 @@ router.get("/createUser", (req, res) => {
     
 })
 
+router.get("/dashboard", (req, res) => {
+    res.render("userDashboard")
+    
+})
+
 module.exports = router;
