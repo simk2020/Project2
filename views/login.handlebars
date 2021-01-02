@@ -1,26 +1,56 @@
- {{!-- //bootstrap --}}
-<h2>Login</h2>
-<div class= "card" id="loginSection">
-<form class="form login-form" action="/login" method="POST">
-  <div class="form-group">
-    <label for="email-login">Email:</label>
-    <input class="form-input" name="email" type="text" id="email-login" />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form</title>
+		<style>
+		.login-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+	</head>
+	<body>
+    <br>
+    <br>
+    <br>
+		<div class="login-form">
+			<h1>Login Form</h1>
+			<form action="login" method="GET">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+          <a href="/game"class="btn btn-info" type="submit">Log In</a>
+          <a href="/createUser" class="btn btn-warning" type="submit">Register</a>
   </div>
-  <div class="form-group">
-    <label for="password-login">Password:</label>
-    <input class="form-input" name="password" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" name="loginID" type="submit">Login</button>
-  </div>
-</form>
-</div>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Play a Game</h5>
-    <p class="card-text">Play A Game</p>
-    <a href="/game" class="btn btn-primary">Click Here</a>
-  </div>
-</div>
-
-<script src="/js/login.js"></script> 
+			</form>
+		</div>
+{{#if loggedIn}}
+<script src="/js/logout.js"></script> 
+ {{/if}}
+</body>
+</html>
