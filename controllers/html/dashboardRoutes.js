@@ -6,16 +6,30 @@ router.get("/", (req, res) => {
     
 })
 
-router.get("/login", (req, res) => {
-    res.render("login")
-    
-})
+//getting the login information
+router.get('/login', (req, res) =>{
 
-router.get("/game", securityScan, (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    console.log("SAVED Login INFORMATION")
+    res.render('login')
+});
+
+//after clicking login it redirects to the game.handlebars
+router.get("/game", (req, res) => {
     res.render("game")
     
 })
 
+// router.get("/game", securityScan, (req, res) => {
+//     res.render("game")
+    
+// })
+
+//after clicking create User it redirects to the login screen and then redirects to the game page 
 router.get("/createUser", (req, res) => {
     res.render("createUser")
     
