@@ -10,11 +10,11 @@ router.get("/", (req, res) => {
 router.get('/login', (req, res) =>{
 
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/game');
         return;
     }
 
-    console.log("SAVED Login INFORMATION")
+    console.log("Login button clicked",)
     res.render('login')
 });
 
@@ -23,11 +23,6 @@ router.get("/game", (req, res) => {
     res.render("game")
     
 })
-
-// router.get("/game", securityScan, (req, res) => {
-//     res.render("game")
-    
-// })
 
 //after clicking create User it redirects to the login screen and then redirects to the game page 
 router.get("/createUser", (req, res) => {
