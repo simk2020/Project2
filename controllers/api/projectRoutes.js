@@ -1,7 +1,12 @@
 const router = require('express').Router();
 const { Project } = require('../../models');
 
-router.post('/gameRoute', async (req, res) => {
+router.get('/playGame', async (req,res)=> {
+  console.log ("this is working");
+  res.json("testing")
+  
+})
+router.post('/playGame', async (req, res) => {
   try {
     console.log("post gameRoute hitting ")
     const newProject = await Project.create({

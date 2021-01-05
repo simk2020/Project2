@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.securityScan(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -56,7 +56,7 @@ router.post('/logout', (req, res) => {
       res.status(204).end();
     });
   } else {
-    res.status(404).end();
+    res.status(404).end(err.message);
   }
 });
 

@@ -58,7 +58,7 @@ router.post('/createUser', async (req, res) => {
       });
 
     } else {
-      res.status(404).end();
+      res.status(404).end(err.message);
     }
   });
   
