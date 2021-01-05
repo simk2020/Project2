@@ -1,20 +1,42 @@
 const router = require('express').Router();
-const securityScan = require ('../../utils/auth.js')
+// const { User, Project } = require('../../models');
 
 router.get("/", (req, res) => {
     res.render("home")
     
 })
 
+// router.get('/', async (req, res) =>{
+//     try {
+//         const ProjectData = await Project.findAll ({
+//             include: [{
+//                 model: User,
+//                 attributes: [ "email", "password"],
+//             },
+//         ],
+//         });
+//         const newProjects = ProjectData.map((projects) => 
+//             projects.get({plain: true})
+//         );
+//         console.log(newProjects);
+//         res.render("home", {
+//             newProjects,
+//             logged_in: req.session.logged_in,
+//         });
+//     } catch (error) {
+//         res.status(400).json(error)
+//     }
+// });
+
 //getting the login information
 router.get('/login', (req, res) =>{
 
-    if (req.session.loggedIn) {
+    if (req.session.user_id) {
         res.redirect('/game');
         return;
     }
 
-    console.log("register button clicked",)
+    console.log("New User Saved:", req.session.user_id)
     res.render('login')
 });
 
