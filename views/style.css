@@ -5,3 +5,12 @@ h2 {
 .card-header {
     background-color : rgb(140, 197, 140);
 }
+
+.navbar {
+    background-color : rgb(140, 197, 140);
+    color: black;
+}
+.style {
+    
+    color: black;
+}
