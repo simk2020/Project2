@@ -14,13 +14,25 @@ router.get('/login', (req, res) =>{
         return;
     }
 
-    console.log("Login button clicked",)
+    console.log("register button clicked",)
     res.render('login')
 });
 
-//after clicking login it redirects to the game.handlebars
-router.get("/game", (req, res) => {
-    res.render("game")
+//after getting to dashboard and click actiity it direct to the playGame.handlebars
+router.get("/playGame", (req, res) => {
+    res.render("playGame")
+    
+})
+
+//after getting to dashboard and click actiity it direct to the activity.handlebars
+router.get("/activity", (req, res) => {
+    res.render("activity")
+    
+})
+
+///after getting to dashboard and click actiity it direct to the mediate.handlebars
+router.get("/meditate", (req, res) => {
+    res.render("meditate")
     
 })
 
@@ -32,6 +44,11 @@ router.get("/createUser", (req, res) => {
 
 router.get("/dashboard", (req, res) => {
     res.render("userDashboard")
+    
+})
+
+router.get("/logout", (req, res) => {
+    res.render("home")
     
 })
 
