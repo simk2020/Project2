@@ -8,7 +8,7 @@ const meditate = require('./meditate')
 
 router.use('/users', userRoutes);
 router.use('/projects', projectRoutes);
-router.use('/', createUser);
+// router.use('/', createUser);
 router.use('/activity', activity);
 router.use('/meditate', meditate);
 
