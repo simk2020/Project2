@@ -14,6 +14,11 @@ Brain Teaser App /
 - login counter - keeping track of the days you logged in.
 - badge/Award - 5 days completion 
 - 
+<!-- 
+- configure frontEnd ajax calls/research ajax calls
+- configure axios calls in backend to communicate with ajax calls/research axios calls
+- configure ui/ux to have a gameLike feel
+ -->
 
 
 
