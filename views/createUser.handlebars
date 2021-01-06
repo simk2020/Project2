@@ -44,19 +44,20 @@
 </head>
 
 <body>
-	<div class="login-form">
+	<div>
 		<h1>Register</h1>
-		<form action="/login" method="POST">
-			<input type="text" name="username" placeholder="Username" required>
+		<form class="signup-form" action="/api/users" method="POST">
+		{{!-- <form class="signup-form" action="/api/users" method="POST"> --}}
+			<input id="username-signup" type="text" name="username" placeholder="Username" required>
 			<br>
-			<input type="password" name="password" placeholder="Password" required>
+			<input id="password-signup" type="password" name="password" placeholder="Password" required>
 			<br>
-			<input type="text" name="name" placeholder="Name" required>
+			<input id="name-signup" type="text" name="name" placeholder="Name" required>
 			<br>
-			<input type="text" name="email" placeholder="Email" required>
+			<input id="email-signup" type="text" name="email" placeholder="Email" required>
 
 			<br>
-			<a class="btn btn-info" type="submit" href="./login">Register Now</a>
+			<a class="btn btn-info signup" href="#">Register Now</a>
 			<a href="/login" class="btn btn-warning">Log In Here</a>
 		</form>
 	</div>
@@ -64,6 +65,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 {{#if logged_in}}
 	<script src="/js/logout.js"></script>
+	{{else}}
+	<script src="/js/login.js"></script>
 	{{/if}}
 </body>
 </html>
