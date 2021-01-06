@@ -49,8 +49,17 @@ router.get("/playGame", async(req, res) => {
 
     // const uiRequest=await axios.get(queryUrl);
     // console.log(uiRequest);
-    res.render("playGame")
-    
+        const queryUrl="https://opentdb.com/api.php?amount=3&category=18&difficulty=medium";
+
+        
+            try{
+                const fetched=await axios.get(queryUrl);                
+                res.render("playGame",{
+                    data:JSON.stringify(fetched.data)
+                })
+            }catch(detour){
+                console.error(detour)
+            }   
 })
 
 //after getting to dashboard and click actiity it direct to the activity.handlebars
@@ -82,3 +91,6 @@ router.get("/logout", (req, res) => {
 })
 
 module.exports = router;
+
+//make request with axios & pass data through handlebars
+//when I pass data to ui
