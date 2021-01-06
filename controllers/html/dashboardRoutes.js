@@ -1,3 +1,4 @@
+const axios=require('axios').default;
 const daVjncjScan = require('../../utils/auth');
 
 const router = require('express').Router();
@@ -43,7 +44,11 @@ router.get('/login', (req, res) =>{
 });
 
 //after getting to dashboard and click actiity it direct to the playGame.handlebars
-router.get("/playGame",daVjncjScan, (req, res) => {
+router.get("/playGame", async(req, res) => {
+    // const queryUrl="https://opentdb.com/api.php?amount=3&category=18&difficulty=medium";
+
+    // const uiRequest=await axios.get(queryUrl);
+    // console.log(uiRequest);
     res.render("playGame")
     
 })
@@ -66,7 +71,7 @@ router.get("/createUser", (req, res) => {
     
 })
 
-router.get("/dashboard",daVjncjScan, (req, res) => {
+router.get("/dashboard", (req, res) => {
     res.render("userDashboard")
     
 })
