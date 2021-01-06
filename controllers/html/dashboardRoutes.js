@@ -1,3 +1,5 @@
+const daVjncjScan = require('../../utils/auth');
+
 const router = require('express').Router();
 // const { User, Project } = require('../../models');
 
@@ -41,19 +43,19 @@ router.get('/login', (req, res) =>{
 });
 
 //after getting to dashboard and click actiity it direct to the playGame.handlebars
-router.get("/playGame", (req, res) => {
+router.get("/playGame",daVjncjScan, (req, res) => {
     res.render("playGame")
     
 })
 
 //after getting to dashboard and click actiity it direct to the activity.handlebars
-router.get("/activity", (req, res) => {
+router.get("/activity",daVjncjScan, (req, res) => {
     res.render("activity")
     
 })
 
 ///after getting to dashboard and click actiity it direct to the mediate.handlebars
-router.get("/meditate", (req, res) => {
+router.get("/meditate",daVjncjScan, (req, res) => {
     res.render("meditate")
     
 })
@@ -64,7 +66,7 @@ router.get("/createUser", (req, res) => {
     
 })
 
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard",daVjncjScan, (req, res) => {
     res.render("userDashboard")
     
 })
