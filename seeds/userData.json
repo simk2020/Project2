@@ -1,9 +1,15 @@
 [
     {
-        "username":"dennydavjncj",
-        "name":"denny da vjncj",
-        "email":"davjncjCode@gmail.com",
-        "password":"secretsssss"
-        
+      "username": "Sample",
+      "name": "Sample",
+      "email": "sample@gmail.com",
+      "password": "password12345"
+    },
+    {
+      "username": "Test",
+      "name": "Test",
+      "email": "testing@aol.com",
+      "password": "password12345"
     }
-]
+  ]
+  
