@@ -22,11 +22,22 @@
         <h3>Lets round our brains out</h3>
 
         <h5>Here's a little brain tease:</h5>
-        {{data}}
-        {{!-- {{#each data}}
-        <h5>{{this.question}}</h5>
-        {{this.question}}
-        {{/each}} --}}
+        <br>
+        <h2>Lets See So?</h2>
+        <br>
+        <br>
+        <div class="card">
+        {{#each data}}
+        <h5 style=" " >{{this.question}}</h5>
+        {{!-- //buttons --}}
+        {{#each this.incorrect_answers}}
+        {{this}}
+        {{/each}}
+         {{this.correct_answer}}
+        {{/each}}
+        </div>
+        <h3 role="button" id="next-question" class="btn btn-info">Next Question</h3>
+        <h6 role="button" id="sumbit" class="btn btn-warning">Submit</h6>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
