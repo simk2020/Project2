@@ -53,7 +53,8 @@ router.get("/playGame", async(req, res) => {
 
         
             try{
-                const fetched=await axios.get(queryUrl);                
+                const fetched=await axios.get(queryUrl);  
+                console.log(JSON.stringify(fetched.data))              
                 res.render("playGame",{
                     data:JSON.stringify(fetched.data)
                 })
