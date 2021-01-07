@@ -14,7 +14,7 @@
 
 <div class="row">
   <div class="col-auto">
-    <h2 class => Welcome, {{name}}, {{email}}, {{username}}!</h2>
+    <h2 class => Welcome, {{req.session.name}}, {{email}}, {{username}}!</h2>
   </div>
 </div>
 <br>
@@ -23,7 +23,7 @@
 <div class="card text-center">
   <div class="card-body">
     <h5 class="card-title">Play Game #1</h5>
-    <p class="card-text">Today's mind-game!</p>
+    <p class="card-text">Today's Mind-Game!</p>
     <a href="/playgame" class="btn btn-primary" id="game">Click Here</a>
   </div>
 </div>
@@ -31,7 +31,7 @@
 <div class="card  text-center">
   <div class="card-body">
     <h5 class="card-title">Play Game #2</h5>
-    <p class="card-text">Easy Game</p>
+    <p class="card-text">Easy Level</p>
     <a href="/activity" class="btn btn-primary">Click Here</a>
   </div>
   <br>
@@ -39,8 +39,8 @@
 <br>
 <div class="card  text-center">
   <div class="card-body">
-    <h5 class="card-title">Meditate</h5>
-    <p class="card-text">Enjoy 3 minutes of meditation</p>
+    <h5 class="card-title">Play Game #3 </h5>
+    <p class="card-text">Hard Level </p>
     <a href="/meditate" class="btn btn-primary">Click Here</a>
   </div>
 </div>
