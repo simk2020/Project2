@@ -1,8 +1,8 @@
-const daVjncjScan=(req,res,next)=>{
+const securityScan=(req,res,next)=>{
     if(!req.session.logged_in){
         res.redirect('/login');
     }else{
         next();
     }
 }
-module.exports = daVjncjScan;
+module.exports = securityScan;
