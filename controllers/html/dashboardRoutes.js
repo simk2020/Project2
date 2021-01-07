@@ -72,13 +72,13 @@ router.get("/activity", async (req, res) => {
 ///after getting to dashboard and click actiity it direct to the mediate.handlebars
 ////play game #2 difficulty easy 
 router.get("/meditate", async (req, res) => {
-    const queryUrl = "https://opentdb.com/api.php?amount=10&category=14&difficulty=hard";
+    const queryUrl = "https://opentdb.com/api.php?amount=10&category=18&difficulty=hard";
 
     try {
         const fetched = await axios.get(queryUrl);
-        console.log(JSON.stringify(fetched.data))
+        console.log(fetched.data.results)
         res.render("meditate", {
-            data: JSON.stringify(fetched.data)
+            data: JSON.stringify(fetched.data.results)
         })
     } catch (error) {
         console.error(error)
