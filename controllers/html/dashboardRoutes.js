@@ -35,7 +35,7 @@ router.get("/playGame", securityScan, async (req, res) => {
 //play game #2 difficulty easy 
 router.get("/activity", securityScan, async (req, res) => {
 
-    const queryUrl = "https://opentdb.com/api.php?amount=5&category=12&difficulty=medium";
+    const queryUrl = "https://opentdb.com/api.php?amount=5&category=9&difficulty=medium";
 
     try {
         const fetched = await axios.get(queryUrl);
