@@ -22,20 +22,28 @@
   <body>
     <html>
     <br>
-    <h3>Test Your Mind</h3>
-    <br>
-    <h5>Here's a little brain tease:</h5>
-    <br>
-    <div class="card">
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-header">Test Your Mind</div>
+  <div class="card-body">
+    <h5 class="card-title">Here's a little brain tease:</h5>
+  </div>
+  </div>
+    <div class="card questionsContainer">
       {{#each questions}}
-        <li id="uiLogic">{{this.question}}</li>
+      <h5 class="question">{{this.question}}</h5>
+      <div class="answerChoices">
         {{#each answers}}
-        <button id="uxLogic" type="button" data-plain="{{plain}}" class="btn btn-info row row-cols-1 row-cols-md-3">{{answer}}</button>
+        <button class="answerChoice" type="button" data-plain="{{plain}}"
+          class="btn btn-info row row-cols-1 row-cols-md-3">{{answer}}</button>
         {{/each}}
+      </div>
       {{/each}}
     </div>
+    <br>
+    <h3>Final Score: <span id="ques_correct">-</span>/<span>{{questions.length}}</span></h3>
     </div>
-    <a href="/activity" class="btn btn-danger">Reset Questions</a>
+    <a href="/activity" class="btn btn-warning">Reset Questions</a>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
       integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
@@ -46,6 +54,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="/js/login.js"></script>
+    <script src="/js/activityLogic.js"></script>
   </body>
 
 </html>
