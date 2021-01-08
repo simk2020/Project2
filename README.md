@@ -1,46 +1,47 @@
-# Unit 15: Project 2
+# Peace & Mind App!!
 
-Tyler, Dennis, Caitlin, Sim
+  ## Description
+  This application is created to allow the user to play a game to challenge their mind and also watch a meditation video to relax their mind.  
+ 
+  ## Table of Contents:
+  * [Description] (#Description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contribution](#contribution)
+  * [Test](#test)
+  * [Questions](#questions)
 
 
-Brain Teaser App /
+  ## Installation:
+  This program requires a few npm packages. Please run the following command to install necessary dependencies :
 
-- authentication ( not required) 
-- game ( Arthmetic )
-- Meditation
-- Manage your funds
-- fashion sense 
-- Daily quote -  
-- login counter - keeping track of the days you logged in.
-- badge/Award - 5 days completion 
-- 
-<!-- 
-- configure frontEnd ajax calls/research ajax calls
-- configure axios calls in backend to communicate with ajax calls/research axios calls
-- configure ui/ux to have a gameLike feel
- -->
+  npm i
+  
+  ## Usage:
+  When the user access the app, they will be prompted to login (without which they can't access the dashboard and play games or meditate).
+  The user can either choose to login or register. 
+  Once logged in, user can access the dashboard and can choose to either play game or watch a video to meditate.
+  
+  ## License
+  none
+  
+  ## Contribution:
+  Tyler Silverman
+  Caitlin Crews
+  Sim Kaur
+  Denny
+  
+  Please contact any of us, if you'd like to contribute to this repo. 
 
-## Overview
-Welcome to Project 2! This is yet another important milestone in your full-stack journey: designing and building your first full-stack web application. You and your team will design and build an app using the MVC paradigm and your own server-side API. You will also continue to add to your professional repertoire with testing, continuous integration and linting tools.
+  ## Test
+  N/A
+ 
+  ## Questions :
+  
+  Please feel free to contact us via github if you have any questions: 
 
-## Key Topics
-* Linting
-* Continuous integration
-* Testing
-
-## Comprehension Check
-You will be employer-ready if you can answer the following questions:
-1. Why is TDD?
-2. What is linting?
-3. What is continuous integration?
-
-## Learning Objectives
-You will be employer-competitive if you are able to:
-* Configure linting and continuous integration with Travis CI.
-* Explain and implement unit tests
-* Design, build and deploy a full-stack web application to Heroku
-
-## Helpful Links
-[Mocha JS Docs](https://mochajs.org/)
-[Chai JS Docs](https://www.chaijs.com/)
-[Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development)
+  ### tylersilverman
+  ### caitlincrews08
+  ### simk2020
+  ### DennisDesmornes
