@@ -77,21 +77,29 @@ router.get("/activity", securityScan, async (req, res) => {
 ///after getting to dashboard and click actiity it direct to the mediate.handlebars
 ////play game #2 difficulty easy 
 router.get("/meditate", securityScan, async (req, res) => {
-    const queryUrl = "https://opentdb.com/api.php?amount=5&category=14&difficulty=hard";
+    res.render("meditate")
+    // const queryUrl = "https://opentdb.com/api.php?amount=5&category=14&difficulty=hard";
 
-    try {
-        const fetched = await axios.get(queryUrl);
-        console.log ("The questions and Answers from the queryUrl", fetched.data)
-        fetched.innerText = queryUrl.data
-        // console.log(JSON.stringify(fetched.data))
-        res.render("meditate", {
-            data:fetched.data.results
-        })
-    } catch (error) {
-        console.error(error)
-    }
+    
 
 })
+
+// router.get("/meditate", securityScan, async (req, res) => {
+//     const queryUrl = "https://opentdb.com/api.php?amount=5&category=14&difficulty=hard";
+
+//     try {
+//         const fetched = await axios.get(queryUrl);
+//         console.log ("The questions and Answers from the queryUrl", fetched.data)
+//         fetched.innerText = queryUrl.data
+//         // console.log(JSON.stringify(fetched.data))
+//         res.render("meditate", {
+//             data:fetched.data.results
+//         })
+//     } catch (error) {
+//         console.error(error)
+//     }
+
+// })
 
 //after clicking create User it redirects to the login screen and then redirects to the game page 
 router.get("/createUser", (req, res) => {
