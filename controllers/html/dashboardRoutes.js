@@ -40,9 +40,34 @@ router.get("/activity", async (req, res) => {
     try {
         const fetched = await axios.get(queryUrl);
         console.log ("The questions and Answers from the queryUrl", fetched.data)
+
+
         fetched.innerText = queryUrl.data
+
+        const questions=fetched.data.results.map(result =>{
+            const {category, type, difficulty, question, correct_answer, incorrect_answers} = result
+
+            const incorrectAnswers = incorrect_answers.map(answer => {
+                return {
+                    plain: false,
+                    answer
+                }
+            })
+
+            const answers = [{ plain:true, answer: correct_answer}, ...incorrectAnswers]
+
+            const shuffle = answers.sort(() => Math.random() - 0.5);
+
+            return {
+                category,
+                type,
+                difficulty,
+                question, 
+                answers: shuffle
+            }
+        })
         res.render("activity", {
-            data:fetched.data.results
+            questions
         })
     } catch (error) {
         console.error(error)
