@@ -35,26 +35,25 @@ router.get("/playGame", async (req, res) => {
 //play game #2 difficulty easy 
 router.get("/activity", async (req, res) => {
 
-    const queryUrl = "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy";
+    const queryUrl = "https://opentdb.com/api.php?amount=5&category=12&difficulty=medium";
 
     try {
         const fetched = await axios.get(queryUrl);
         console.log ("The questions and Answers from the queryUrl", fetched.data)
         fetched.innerText = queryUrl.data
-        // console.log(JSON.stringify(fetched.data))
         res.render("activity", {
             data:fetched.data.results
         })
     } catch (error) {
         console.error(error)
     }
-
 })
 
 ///after getting to dashboard and click actiity it direct to the mediate.handlebars
 ////play game #2 difficulty easy 
 router.get("/meditate", async (req, res) => {
-    const queryUrl = "https://opentdb.com/api.php?amount=5&category=14&difficulty=hard";
+    console.log('meditate button clicked')
+    const queryUrl = "https://opentdb.com/api.php?amount=5&category=12&difficulty=hard";
 
     try {
         const fetched = await axios.get(queryUrl);
