@@ -16,8 +16,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      // document.location.replace('/login');
-      alert('Failed to log in.');
+      alert('You Are Log In is  Saved.');
     }
   }
 };
@@ -41,10 +40,8 @@ const signupFormHandler = async (event) => {
       document.location.replace('/');
       console.log("Success!")
     } else {
-      //add the alert back after fixing the dashboard route for signing up a new user
-      // document.location.replace('/dashboard');
       console.log(response)
-      alert('Failed to sign up.');
+      alert('You Are Now Signed Up, Please Go to Log In Screen ');
     }
   }
 };
