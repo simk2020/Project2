@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hard Level Questions </title>
+  <title>Meditate</title>
   </head>
   <body>
 
@@ -24,17 +24,21 @@
         <h2>Lets See So?</h2>
         <br>
         <br>
-        <div class="card">
-        {{#each data}}
-        <h5 style=" " >{{this.question}}</h5>
+        <div class="card border mb-3-success" style ="center" style="max-width: 30rem;">
+      {{#each data}}
+        <li>{{this.question}}</li>
         {{!-- //buttons --}}
-        {{#each this.incorrect_answers}}
-        {{this}}
+        {{#each this.correct_answer}}
+        {{#each}}
+        <ul>{{this.incorrect_answers}}</ul>
         {{/each}}
-         {{this.correct_answer}}
+        <ul>{{this.incorrect_answers}}</ul>
+        {{/each}}
+         <ul>{{this.correct_answer}}</ul>
         {{/each}}
         </div>
-          <br>
+</div>
+<br>
         <h3 role="button" id="next-question" class="btn btn-info">Next Question</h3>
         <h6 role="button" id="sumbit" class="btn btn-warning">Submit</h6>
 
