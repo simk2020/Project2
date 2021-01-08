@@ -16,7 +16,7 @@ router.get('/login', (req, res) => {
 });
 
 //after getting to dashboard and click actiity it direct to the playGame.handlebars
-router.get("/playGame", async (req, res) => {
+router.get("/playGame", securityScan, async (req, res) => {
     const queryUrl = "https://opentdb.com/api.php?amount=5&category=12&difficulty=medium";
 
     try {
@@ -33,7 +33,7 @@ router.get("/playGame", async (req, res) => {
 
 //after getting to dashboard and click actiity it direct to the activity.handlebars
 //play game #2 difficulty easy 
-router.get("/activity", async (req, res) => {
+router.get("/activity", securityScan, async (req, res) => {
 
     const queryUrl = "https://opentdb.com/api.php?amount=5&category=12&difficulty=medium";
 
@@ -51,9 +51,8 @@ router.get("/activity", async (req, res) => {
 
 ///after getting to dashboard and click actiity it direct to the mediate.handlebars
 ////play game #2 difficulty easy 
-router.get("/meditate", async (req, res) => {
-    console.log('meditate button clicked')
-    const queryUrl = "https://opentdb.com/api.php?amount=5&category=12&difficulty=hard";
+router.get("/meditate", securityScan, async (req, res) => {
+    const queryUrl = "https://opentdb.com/api.php?amount=5&category=14&difficulty=hard";
 
     try {
         const fetched = await axios.get(queryUrl);
@@ -77,16 +76,20 @@ router.get("/createUser", (req, res) => {
 
 })
 
-router.get("/dashboard",  (req, res) => {
+router.get("/dashboard", securityScan, (req, res) => {
     console.log("clicking dashboard button in nav bar")
     res.render("userDashboard")
 
 })
 
-router.get("/logout", (req, res) => {
-    console.log("clicking logout button in nav bar")
-    res.render("home")
-
-})
+router.get('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.redirect("/login")
+        // res.status(204).end();
+      });
+    } 
+    res.redirect("/login");
+  });
 
 module.exports = router;
