@@ -5,6 +5,9 @@ const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 
+const chalk = require('chalk');
+console.log(chalk.blue('Welcome to Peace and Mind'));
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
