@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hard Quiz</title>
+  <title>Meditate</title>
   </head>
   <body>
 
@@ -19,8 +19,28 @@
 </div>
 <body>
     <html>
-      <link>
-    </html>
+        <h3>Hard  Level Questions?</h3>
+        <br>
+        <h2>Lets See So?</h2>
+        <br>
+        <br>
+        <div class="card border mb-3-success" style ="center" style="max-width: 30rem;">
+      {{#each data}}
+        <li>{{this.question}}</li>
+        {{!-- //buttons --}}
+        {{#each this.correct_answer}}
+        {{#each}}
+        <ul>{{this.incorrect_answers}}</ul>
+        {{/each}}
+        <ul>{{this.incorrect_answers}}</ul>
+        {{/each}}
+         <ul>{{this.correct_answer}}</ul>
+        {{/each}}
+        </div>
+</div>
+<br>
+        <h3 role="button" id="next-question" class="btn btn-info">Next Question</h3>
+        <h6 role="button" id="sumbit" class="btn btn-warning">Submit</h6>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
