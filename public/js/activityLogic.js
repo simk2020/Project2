@@ -1,35 +1,33 @@
-const API="https://opentdb.com/api.php?amount=5&category=12&difficulty=medium";//could help in parsing JSON response, comparing user selections to [correct answer]
+const answerChoices = document.querySelectorAll(".answerChoices");
 
-const initialTease=async UX=>{
-    UX.preventDefault();
+const quesCorrect = document.querySelector("#ques_correct")
+let score = 0
 
-    const iQuestion=document.querySelector('#uiLogic').value;//rendered question
-    const iChoice=document.querySelector('#uxLogic').value;//rendered potential answers
-    const submitButton=document.querySelector('#submit');//key target for use within an event listenter
 
-    if(iChoice){
-        const programmaticMagic=await fetch(API){
-            correct_answer:results.correct_answer
-        }//this code block is a totally different stream of thought from the one below. I just started shootin' shots...
 
-        let userChoice;
-        userChoice=iChoice.userChoice.value;
-        if(!this.userChoice){
-            alert('Practice always lends itself to progress');
-        }else{
-            alert("I would call you a genius but I don't want to inflate your false sense of self");
+for (let i = 0; i < answerChoices.length; i++) {
+
+    answerChoices[i].addEventListener("click", function (event) {
+        const button = event.target
+        console.log(button.tagName)
+        
+        if (button.tagName !== "BUTTON") {
+            return;
         }
-    }
+    
+        console.log(button.dataset.plain);
+        
+        if (button.dataset.plain === "true") { 
+            //handles the if statement for the correct answer
+            button.style.backgroundColor = "green";
+            score ++;
+            quesCorrect.textContent = score;
+        } else {
+            //handles the if statement for the incorrect answer
+            button.style.backgroundColor = "red"
+    
+            //save a quiz score button and store the score in the database for future reference
+        }
+    
+    });
 }
-initialTease()
-iChoice.addEventListener('click',()=>{
-    // if(this===)
-})//had trouble trying to target the 'correct object'
-
-//handlebars logic
-    //if question is boolean, campare for true or false
-    //if question is multichoice, compare for corrrect response property
-    //must account for variable question types
-//upon click of submit button, configure what that action results in
-//add event listeners on targeted elements
-    //use psuedo classes for before/after user clicks an element

@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert('You Are Log In is  Saved.');
+      alert('You have failed to Register');
     }
   }
 };
