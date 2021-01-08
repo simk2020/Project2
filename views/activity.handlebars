@@ -29,14 +29,14 @@
     <br>
     <div class="card">
       {{#each questions}}
-        <li>{{this.question}}</li>
+        <li id="uiLogic">{{this.question}}</li>
         {{#each answers}}
-        <button type="button" data-plain="{{plain}}" class="btn btn-info">{{answer}}</button>
+        <button id="uxLogic" type="button" data-plain="{{plain}}" class="btn btn-info">{{answer}}</button>
         {{/each}}
       {{/each}}
     </div>
     </div>
-    <h6 role="button" id="sumbit" class="btn btn-info">Submit</h6>
+    <h6 role="button" id="submit" class="btn btn-info">Submit</h6>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
       integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
