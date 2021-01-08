@@ -29,9 +29,9 @@
     <br>
     <div class="card">
       {{#each questions}}
-        <li>{{this.question}}</li>
+        <li id="uiLogic">{{this.question}}</li>
         {{#each answers}}
-        <button type="button" data-plain="{{plain}}" class="btn btn-info">{{answer}}</button>
+        <button id="uxLogic" type="button" data-plain="{{plain}}" class="btn btn-info">{{answer}}</button>
         {{/each}}
       {{/each}}
     </div>
