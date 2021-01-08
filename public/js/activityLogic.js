@@ -5,7 +5,7 @@ const initialTease=async UX=>{
 
     const iQuestion=document.querySelector('#uiLogic').value;//rendered question
     const iChoice=document.querySelector('#uxLogic').value;//rendered potential answers
-    const submitButton=document.querySelector('#submit');
+    const submitButton=document.querySelector('#submit');//key target for use within an event listenter
 
     if(iChoice){
         const programmaticMagic=await fetch(API){
